@@ -1,0 +1,132 @@
+
+=== 1. Threshold equation and its limits (Sec. III, Eqs. 13, 16, 17) ===
+[PASS] weak-loading limit chi* ~ (1+2e^{-2a/r0})/r0
+         R=0.05: 20.000000000000 vs 20.000000000000
+[PASS] strong-loading limit chi* ~ (r0 a)^{-1/2}
+         R=100.0: chi* sqrt(R) = 1.0017
+[PASS] chi* decreases monotonically with r0 ('stronger loading is more stable')
+[PASS] band edges at R=0.15: z(1/r0)=+1, z(chi*)=-1  [TM]
+[PASS] band edges at R=1.0: z(1/r0)=+1, z(chi*)=-1  [TM]
+[PASS] band edges at R=3.0: z(1/r0)=+1, z(chi*)=-1  [TM]
+
+=== 2. Negative-energy modes: count, location, energy sign (Secs. II-III, App. A) ===
+[PASS] R=0.15: #(kappa^2<0) = #negative rows = 10  [FD]
+         found 10
+[PASS] R=0.15: all negative-energy modes inside [1/R, chi*] (FD discretization tol 0.3%)  [FD]
+         chi in [6.6815, 6.6816], band [6.6667, 6.6667]
+[PASS] R=3.0: #(kappa^2<0) = #negative rows = 10  [FD]
+         found 10
+[PASS] R=3.0: all negative-energy modes inside [1/R, chi*] (FD discretization tol 0.3%)  [FD]
+         chi in [0.3597, 0.6108], band [0.3333, 0.6115]
+[PASS] kappa^2<0 mode has negative capacitance-weighted norm; kappa^2>0 mode positive (Eq. 8)  [FD]
+
+=== 3. Matched strip: threshold k_x >= chi*, no oscillatory modes, growth rate (Eqs. 14-15) ===
+[PASS] gamma=1, kx=0.3000 (chi*=0.6115): unstable, no complex modes  [FD]
+         #zero-freq=8, #osc=0
+[PASS] gamma=1, kx=0.6053 (chi*=0.6115): unstable, no complex modes  [FD]
+         #zero-freq=1, #osc=0
+[PASS] gamma=1, kx=0.6176 (chi*=0.6115): stable, no complex modes  [FD]
+         #zero-freq=0, #osc=0
+[PASS] gamma=1, kx=2.0000 (chi*=0.6115): stable, no complex modes  [FD]
+         #zero-freq=0, #osc=0
+[PASS] gamma=1, kx=5.0000 (chi*=0.6115): stable, no complex modes  [FD]
+         #zero-freq=0, #osc=0
+[PASS] sigma_max = v sqrt(chi*^2 - kx^2) on the infinite strip  [TM]
+         0.529531 vs 0.529534
+[PASS] finite strips approach sigma_max from below (infinite criterion is conservative)  [FD]
+         M=10,20,40: [0.5268 0.5288 0.5294]  -> 0.5295
+
+=== 4. Ordinary negative capacitors, gamma = 0 (Sec. IV) ===
+[PASS] gamma=0, kx=0.5: unstable with one growing mode per negative row (8)  [FD]
+         #zero-freq=8, #osc=0, growth=0.634
+[PASS] gamma=0, kx=1.0: unstable with one growing mode per negative row (8)  [FD]
+         #zero-freq=8, #osc=0, growth=0.695
+[PASS] gamma=0, kx=3.0: unstable with one growing mode per negative row (8)  [FD]
+         #zero-freq=8, #osc=0, growth=1.031
+[PASS] gamma=0, kx=10.0: unstable with one growing mode per negative row (8)  [FD]
+         #zero-freq=8, #osc=0, growth=1.854
+[PASS] isolated ordinary row, r0=0.5, kx=1.0: sigma^2 = [1+sqrt(1+4r0^2kx^2)]/(2r0^2) (Eq. 20)  [FD]
+         FD 2.1977 vs formula 2.1974
+[PASS] isolated ordinary row, r0=0.5, kx=4.0: sigma^2 = [1+sqrt(1+4r0^2kx^2)]/(2r0^2) (Eq. 20)  [FD]
+         FD 3.2028 vs formula 3.2010
+[PASS] gamma=0 growth increases as the strip narrows  [TM]
+         [0.6347 0.6956 0.8631]
+
+=== 5. Partial matching, gamma <= 1: threshold chi*(gamma r0) (Eq. 21) ===
+[PASS] gamma=0.75: unstable at 0.99 chi*(gR), stable at 1.01 chi*(gR), never oscillatory  [FD+TM]
+         chi*(gR)=0.7203; FD below (1, 0), above (0, 0); TM below (True, False), above (False, False)
+[PASS] gamma=0.75: z decreases monotonically along x<0 at threshold (App. B)  [TM]
+[PASS] gamma=0.5: unstable at 0.99 chi*(gR), stable at 1.01 chi*(gR), never oscillatory  [FD+TM]
+         chi*(gR)=0.9190; FD below (1, 0), above (0, 0); TM below (True, False), above (False, False)
+[PASS] gamma=0.5: z decreases monotonically along x<0 at threshold (App. B)  [TM]
+[PASS] gamma=0.25: unstable at 0.99 chi*(gR), stable at 1.01 chi*(gR), never oscillatory  [FD+TM]
+         chi*(gR)=1.4793; FD below (2, 0), above (0, 0); TM below (True, False), above (False, False)
+[PASS] gamma=0.25: z decreases monotonically along x<0 at threshold (App. B)  [TM]
+
+=== 6. Over-matching, gamma > 1: 4 r0^2 kx^2 (gamma-1) <= 1 (Eq. 23) ===
+[PASS] isolated row r0=0.15, gamma=1.05: complex pair appears between 0.95 and 1.05 of kx_c=14.907  [FD]
+         #complex below=0, above=2
+[PASS] isolated row r0=0.15, gamma=1.2: complex pair appears between 0.95 and 1.05 of kx_c=7.454  [FD]
+         #complex below=0, above=2
+[PASS] lattice R=3, kx=0.62: onset gamma_c = 1 + 1/(4R^2kx^2), lattice-independent  [TM]
+         1.0722626893 vs 1.0722626893
+[PASS] lattice R=3, kx=0.6974: onset gamma_c = 1 + 1/(4R^2kx^2), lattice-independent  [TM]
+         1.0571128211 vs 1.0571128212
+[PASS] lattice R=3, kx=1.0: onset gamma_c = 1 + 1/(4R^2kx^2), lattice-independent  [TM]
+         1.0277777777 vs 1.0277777778
+[PASS] lattice R=3, kx=1.5: onset gamma_c = 1 + 1/(4R^2kx^2), lattice-independent  [TM]
+         1.0123456790 vs 1.0123456790
+[PASS] over-matched row binds a negative- and a positive-energy mode below cutoff (they collide)  [FD+TM]
+         roots x=[175.944 191.211], energy signs [np.float64(-1.0), np.float64(1.0)]
+
+=== 7. Positive vs negative rows separately (Sec. IV) ===
+[PASS] under-matched positive rows (gamma+=0.95, gamma-=1) oscillate  [TM+FD]
+         TM osc=True, FD #osc=2
+[PASS] nominal matching: +-0.5% independent errors stable  [TM]
+[PASS] nominal matching: +-1% independent errors reach instability  [TM]
+[PASS] biased design (1.2, 0.95): +-0.15 in gamma+, +-0.10 in gamma- all stable  [TM]
+[PASS] biased design: +-12.5% passive-row and +-10% NIC-row inductor errors all stable  [TM]
+[PASS] biased design: +-15% passive / +-10% NIC inductor errors is NOT fully stable (bound is tight)  [TM]
+[PASS] biased design: box corners and centre stable on a finite strip  [FD]
+
+=== 8. Hardware numbers (Table II, Sec. V) ===
+[PASS] Table II row C_L=0.5 pF
+         chi*=600.00/m, nu*=12.729 GHz, Wmax=5.24 mm, r0/a=0.150
+[PASS] Table II row C_L=2 pF
+         chi*=159.05/m, nu*=3.374 GHz, Wmax=19.75 mm, r0/a=0.601
+[PASS] Table II row C_L=5 pF
+         chi*=82.74/m, nu*=1.755 GHz, Wmax=37.97 mm, r0/a=1.502
+[PASS] Table II row C_L=10 pF
+         chi*=55.06/m, nu*=1.168 GHz, Wmax=57.06 mm, r0/a=3.003
+[PASS] Table II row C_L=20 pF
+         chi*=37.81/m, nu*=0.802 GHz, Wmax=83.08 mm, r0/a=6.006
+[PASS] Table II row C_L=50 pF
+         chi*=23.51/m, nu*=0.499 GHz, Wmax=133.62 mm, r0/a=15.015
+[PASS] v_p = 1/(Z0 C') and L' = Z0^2 C' = 375 nH/m
+[PASS] W_x=50 mm: kx=62.8/m, margin 14%, cutoff 1.33 GHz
+[PASS] negative-energy modes occupy 0.64-1.17 GHz
+         0.642-1.171 GHz
+[PASS] matched L_L = 0.141 nH; biased 0.117 / 0.148 nH
+[PASS] discrete-row correction to kx is -0.4%
+         -0.0041
+[PASS] threshold test: stable iff C_L >= 7.92 pF at W_x = 50 mm
+         7.922 pF
+[PASS] uniform matching window 0.79 <= gamma <= 1.057
+         [0.7922, 1.0570]
+[PASS] over-match oscillation onset near 1.29 GHz
+         1.2945 GHz
+[PASS] open-edge growth sigma = v chi* = 7.3e9 /s
+         7.339e+09 /s
+[PASS] negative row with W_x=50 mm, Delta_x=5 mm: 9 shunt + 10 series elements
+
+=== 9. Loss and NIC gain (Sec. VI, Eq. 25) ===
+[PASS] participation ratio of the band modes, order 1: Lambda = 3.6-7.8  [FD]
+         3.63-7.78
+[PASS] first-order NIC gain window 0.77 < rho < 1.37  [FD]
+         0.772 < rho < 1.375
+[PASS] uniform Q=100: largest growth 4.6e8 /s near 1.14 GHz (direct lossy solve)  [FD]
+         4.572e+08 /s at 1.140 GHz
+[PASS] direct lossy solve: rho=0.7 unstable, 0.8 and 1.3 stable, 1.4 unstable  [FD]
+         {0.7: np.False_, 0.8: np.True_, 1.3: np.True_, 1.4: np.False_}
+
+65/65 checks passed.

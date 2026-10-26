@@ -1,0 +1,21 @@
+=== First-order participation ratios, matched 10-pF design ===
+order m=1 (kx a=0.697): 20 negative-energy modes, 0.643-1.163 GHz, Lambda = 3.6-7.8;  NIC gain window 0.772 < rho < 1.375
+order m=2 (kx a=1.395): 20 negative-energy modes, 2.397-2.585 GHz, Lambda = 1.5-6.8;  NIC gain window 0.744 < rho < 1.373
+order m=3 (kx a=2.092): 20 negative-energy modes, 3.825-3.946 GHz, Lambda = 1.3-6.7;  NIC gain window 0.740 < rho < 1.373
+order m=4 (kx a=2.790): 20 negative-energy modes, 5.203-5.292 GHz, Lambda = 1.3-6.6;  NIC gain window 0.738 < rho < 1.373
+order m=5 (kx a=3.487): 20 negative-energy modes, 6.562-6.633 GHz, Lambda = 1.3-6.6;  NIC gain window 0.738 < rho < 1.373
+order m=6 (kx a=4.185): 20 negative-energy modes, 7.912-7.971 GHz, Lambda = 1.3-6.6;  NIC gain window 0.737 < rho < 1.373
+
+=== Direct lossy solve, order m=1, uniform Q = 100 (d = 0.01) ===
+max growth sigma = 4.57e+08 1/s at 1.140 GHz (sigma/omega = 0.0638; e-folding 2.2 ns)
+
+=== NIC gain d_NIC = -rho * d, host and positive rows d = 0.01 ===
+rho=0.00: max Im(omega)/Re(omega) = +0.0310 at 1.155 GHz  [unstable]
+rho=0.50: max Im(omega)/Re(omega) = +0.0115 at 1.161 GHz  [unstable]
+rho=0.70: max Im(omega)/Re(omega) = +0.0031 at 1.162 GHz  [unstable]
+rho=0.80: max Im(omega)/Re(omega) = -0.0013 at 1.162 GHz  [stable]
+rho=1.00: max Im(omega)/Re(omega) = -0.0100 at 0.643 GHz  [stable]
+rho=1.30: max Im(omega)/Re(omega) = -0.0021 at 1.342 GHz  [stable]
+rho=1.35: max Im(omega)/Re(omega) = -0.0008 at 1.342 GHz  [stable]
+rho=1.40: max Im(omega)/Re(omega) = +0.0004 at 1.342 GHz  [unstable]
+rho=1.60: max Im(omega)/Re(omega) = +0.0052 at 1.344 GHz  [unstable]
