@@ -324,6 +324,12 @@ The analysis leaves out several features of real hardware. The model is continuo
 
 Loading a transmission-line medium with shunt capacitors changes its energy metric rather than its stiffness, and this single observation turns non-Foster stability into a kinematic question with closed-form answers. Ordinary negative capacitors are unstable whenever the capacitance matrix is indefinite, regardless of geometry. Velocity-matched negative loading is free of latch-up when transverse confinement exceeds the binding of the negative-energy band, $k_x\ge\chi_*$, imperfect matching opens an asymmetric tolerance window that can be designed, and the loss that would destabilize the surviving negative-energy modes can be balanced by a controlled NIC gain. The resulting rules are geometric, $W_x\le\pi/\chi_*$, and they place the instability scale where the NICs must operate.
 
+\begin{acknowledgments}
+D.~\v{S}$^1$. and D.~S. are partially supported by the US National Science Foundation, under Grant No.~PHY-2310363. Claude Opus 5.5 was used in assisting with text and numerical code, as well as auditing earlier versions of the manuscript. 
+\end{acknowledgments}
+
+\bibliography{references}
+
 \appendix
 
 \section{Inertia and reality of the spectrum}
@@ -354,7 +360,5 @@ The points $q^2=1$ are where $z=1$ for any $a$. They are the roots of the quadra
 \label{app:numerics}
 
 The closed-form statements were compared with a finite-difference solution of Eq.~\eqref{eq:gamma} on finite strips with Dirichlet ends, solved as a general generalized eigenproblem without using the transfer matrix, so that complex eigenvalues are not excluded by construction. Both methods solve the same continuum model, so the comparison tests the algebra and the closed forms, not the model itself. For $R=0.15$ and $R=3$ with 10 negative rows the solver finds exactly 10 negative-energy modes. For $R=3$ they lie at $\chi a\in[0.360,0.611]$, inside the band $[1/R,\chi_*a]=[0.333,0.611]$, and finite strips of 10, 20, and 40 rows approach $\sigma_{\max}$ of Eq.~\eqref{eq:sigma} from below. For $\gamma=1$, 0.75, 0.5, and 0.25 the strip is unstable at $k_x=0.99\,\chi_*(\gamma r_0)$ and stable at $1.01\,\chi_*(\gamma r_0)$, with no complex eigenvalues. For $\gamma=0$ every transverse wave number tested is unstable with one growing mode per negative row, and the isolated-row rate~\eqref{eq:sigma0} is reproduced to better than 0.1\%. The over-matching onset~\eqref{eq:overmatch} agrees with the lattice computation to $10^{-10}$, and the two colliding modes carry opposite energy signs. The tolerance map of Fig.~\ref{fig:matching}(b) was computed from the exact half-trace and spot-checked by finite differences at the corners and center of the biased tolerance rectangle. The loss results of Sec.~\ref{sec:loss} use the same finite strip with 40 rows: the participation ratios come from its lossless eigenvectors, and the growth rates from the complex generalized eigenproblem in which each element value $X_e$ is replaced by $X_e+i|X_e|d_e$. Near each boundary finite strips are slightly more stable than the infinite strip, so the numbers quoted in the paper are infinite-strip values unless stated otherwise. The scripts that reproduce every number and figure are provided as Supplemental Material.
-
-\bibliography{references}
 
 \end{document}
